@@ -4,10 +4,9 @@ describe('getLast', function() {
   });
 });
 
-describe('reverse', function() {
+describe('reverser', function() {
   it('returns the array in a reversed order', function() {
-    var array = [1,2,3,4];
-    expect(array.reverse()).toEqual([4,3,2,1]);
+    expect(reverser([1,2,3,4])).toEqual([4,3,2,1]);
   });
 });
 
@@ -18,9 +17,15 @@ describe('shuffle', function() {
   });
 });
 
-describe('sort', function() {
+describe('sorter', function() {
   it('returns the elements of an array in a sorted order', function() {
-    var array = [4,3,5,2];
-    expect(array.sort()).toEqual([2,3,4,5]);
+    expect(sorter([4,3,5,2])).toEqual([2,3,4,5]);
   });
 });
+
+describe('create array', function() {
+  it('returns an array of specified number of elements', function() {
+    spyOn(Math, 'random').and.returnValue(0.1);
+    expect(createArray(4)).toEqual([10,10,10,10]);
+  })
+})

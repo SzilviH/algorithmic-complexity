@@ -13,30 +13,31 @@ function shuffle(array) {
     return array;
 }
 
+function reverser(array) {
+  return array.reverse();
+}
 
-var myArray = [1, 2, 3, 4];
-var t0 = performance.now();
-console.log(getLast(myArray));
-var t1 = performance.now();
+function sorter(array) {
+  return array.sort();
+}
 
-console.log("Getting last element of array took " + (t1-t0) + " milliseconds.");
+function createArray(size) {
+  array = [];
+  var i;
+  for (i = 0; i < size; i++) {
+    array.push(Math.floor(Math.random() * 101));
+  };
+  return array;
+}
 
-
-var t0 = performance.now();
-console.log(myArray.reverse());
-var t1 = performance.now();
-
-console.log("Getting reversed array took " + (t1-t0) + " milliseconds.");
-
-var t0 = performance.now();
-console.log(shuffle(myArray));
-var t1 = performance.now();
-
-console.log("Shuffling array took " + (t1-t0) + " milliseconds.");
-
-var newArray = shuffle(myArray);
-var t0 = performance.now();
-console.log(newArray.sort());
-var t1 = performance.now();
-
-console.log("Sorting array took " + (t1-t0) + " milliseconds.");
+function testTime(fn) {
+  times = []
+  for (i = 5000; i <= 100000; i += 5000) {
+    var array = createArray(i);
+    var t0 = performance.now();
+    fn(array);
+    var t1 = performance.now();
+    times.push(t1-t0);
+  };
+  return times;
+};
