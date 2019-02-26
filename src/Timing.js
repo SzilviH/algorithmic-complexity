@@ -1,6 +1,6 @@
 function testTime(fn) {
-  times = []
-  for (i = 0; i <= 100000; i += 5000) {
+  var times = []
+  for (var i = 0; i <= 100000; i += 5000) {
     var array = createArray(i);
     var t0 = performance.now();
     fn(array);
