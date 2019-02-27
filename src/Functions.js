@@ -54,3 +54,7 @@ function quickSort(array) {
     return newArray.concat(quickSort(left), pivot, quickSort(right));
   }
 }
+
+// function mergeSort(array) {
+//
+// }

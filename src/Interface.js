@@ -74,6 +74,7 @@ var quickSortTrace = {
 
 var data1 = [reverserTrace, sorterTrace];
 var data2 = [getLastTrace, shuffleTrace, duplicatesTrace, quickSortTrace];
+var data3 = [quickSortTrace, sorterTrace];
 
 var layout1 = {
   title: 'Timing Standard JavaScript Library Functions',
@@ -95,5 +96,16 @@ var layout2 = {
   }
 };
 
+var layout3 = {
+  title: 'Timing Standard JavaScript Sort Function Against Custom Quick Sort Method',
+  xaxis: {
+    title: 'Input size'
+  },
+  yaxis: {
+    title: 'Time (ms)'
+  }
+};
+
 Plotly.newPlot('timing-chart1', data1, layout1, {responsive: true});
 Plotly.newPlot('timing-chart2', data2, layout2, {responsive: true});
+Plotly.newPlot('timing-chart3', data3, layout3, {responsive: true});
