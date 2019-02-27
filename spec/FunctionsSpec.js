@@ -23,9 +23,8 @@ describe('sorter', function() {
   });
 });
 
-describe('create array', function() {
-  it('returns an array of specified number of elements', function() {
-    spyOn(Math, 'random').and.returnValue(0.1);
-    expect(createArray(4)).toEqual([10,10,10,10]);
+describe('duplicates', function() {
+  it('returns duplicates elements in an array', function() {
+    expect(duplicates([1,2,3,1])).toEqual([1,1]);
   })
 })

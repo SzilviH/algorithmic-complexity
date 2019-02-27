@@ -1,3 +1,11 @@
+function reverser(array) {
+  return array.reverse();
+}
+
+function sorter(array) {
+  return array.sort();
+}
+
 function getLast(array) {
   return array[array.length-1];
 }
@@ -13,10 +21,15 @@ function shuffle(array) {
     return array;
 }
 
-function reverser(array) {
-  return array.reverse();
-}
-
-function sorter(array) {
-  return array.sort();
+function duplicates(array) {
+  results = [];
+  for (var i = 0; i <= array.length; i++) {
+    for (var j = 0; j <= array.length; j++) {
+      if (i != j && array[i] == array[j]) {
+        results.push(array[j]);
+        break;
+      }
+    }
+  }
+  return results;
 }
