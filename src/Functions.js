@@ -33,3 +33,24 @@ function duplicates(array) {
   }
   return results;
 }
+
+function quickSort(array) {
+  if (array.length <= 1) {
+    return array;
+  } else {
+    var left = [];
+    var right = [];
+    var newArray = [];
+    var pivot = array.pop();
+
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] <= pivot) {
+        left.push(array[i]);
+      } else {
+        right.push(array[i]);
+      }
+    }
+
+    return newArray.concat(quickSort(left), pivot, quickSort(right));
+  }
+}

@@ -26,5 +26,11 @@ describe('sorter', function() {
 describe('duplicates', function() {
   it('returns duplicates elements in an array', function() {
     expect(duplicates([1,2,3,1])).toEqual([1,1]);
-  })
-})
+  });
+});
+
+describe('quickSort', function() {
+  it(`returns an array's items ordered`, function() {
+    expect(quickSort([4,3,5,2])).toEqual([2,3,4,5]);
+  });
+});

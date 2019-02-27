@@ -61,8 +61,19 @@ var duplicatesTrace = {
   }
 };
 
+var quickSortTrace = {
+  x: getRange(),
+  y: testTime(quickSort),
+  type: 'lines',
+  name: 'quickSort()',
+  line: {
+    color: 'rgb(76, 174, 237)',
+    width: 3
+  }
+};
+
 var data1 = [reverserTrace, sorterTrace];
-var data2 = [getLastTrace, shuffleTrace, duplicatesTrace];
+var data2 = [getLastTrace, shuffleTrace, duplicatesTrace, quickSortTrace];
 
 var layout1 = {
   title: 'Timing Standard JavaScript Library Functions',
